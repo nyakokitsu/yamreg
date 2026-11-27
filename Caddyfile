@@ -1,0 +1,13 @@
+repo.hackalice.me {
+    encode zstd gzip
+    reverse_proxy yamreg:8080
+}
+
+# Cloudflare-proxied hostname. Cloudflare presents its public edge certificate;
+# this origin uses Caddy's internal TLS certificate. Set Cloudflare SSL mode to
+# Full so the edge-to-origin hop remains encrypted.
+repo.yse.wtf {
+    tls internal
+    encode zstd gzip
+    reverse_proxy yamreg:8080
+}

@@ -1,0 +1,5 @@
+/target
+.env
+.env.production
+yamreg-data/
+.DS_Store
